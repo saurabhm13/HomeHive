@@ -27,12 +27,16 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.homehive.R
 import com.example.homehive.ui.theme.grey
 import com.example.homehive.ui.theme.lightBlue
 
 @Composable
-fun OnBoardingScreen() {
+fun OnBoardingScreen(
+    navController: NavController
+) {
     Scaffold { innerPadding ->
         Column(
             modifier = Modifier
@@ -131,5 +135,5 @@ fun OnBoardingScreen() {
 @Preview
 @Composable
 fun OnboardingScreenPreview() {
-    OnBoardingScreen()
+    OnBoardingScreen(rememberNavController())
 }
