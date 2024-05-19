@@ -56,7 +56,7 @@ val Typography = Typography(
 
     titleLarge = TextStyle(
         fontFamily = ubuntu,
-        fontSize = 22.sp,
+        fontSize = 20.sp,
         fontWeight = FontWeight.Normal,
     ),
 

@@ -1,9 +1,9 @@
 package com.example.homehive.presentation.onboarding
 
-import android.widget.StackView
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -19,6 +19,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -30,14 +31,14 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.homehive.R
-import com.example.homehive.ui.theme.grey
+import com.example.homehive.presentation.navigation.Screens
 import com.example.homehive.ui.theme.lightBlue
 
 @Composable
 fun OnBoardingScreen(
     navController: NavController
 ) {
-    Scaffold { innerPadding ->
+    Scaffold() { innerPadding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -101,6 +102,12 @@ fun OnBoardingScreen(
             Spacer(modifier = Modifier.weight(0.5F))
 
             Box(
+                modifier = Modifier.clickable(
+                    indication = null,
+                    interactionSource = remember { MutableInteractionSource() }
+                ) {
+                    navController.navigate(Screens.HomeScreen.route)
+                },
                 contentAlignment = Alignment.CenterStart
             ) {
                 Surface(

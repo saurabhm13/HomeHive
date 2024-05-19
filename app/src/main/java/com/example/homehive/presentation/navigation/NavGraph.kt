@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.homehive.presentation.category.CategoryWiseScreen
+import com.example.homehive.presentation.category.PropertyByCategoryScreen
 import com.example.homehive.presentation.details.DetailsScreen
 import com.example.homehive.presentation.home.HomeScreen
 import com.example.homehive.presentation.onboarding.OnBoardingScreen
@@ -35,9 +35,9 @@ fun NavGraph(
         }
 
         composable(
-            route = Screens.CategoryWiseScreen.route
+            route = Screens.PropertyByCategoryScreen.route
         ) {
-            CategoryWiseScreen(navController)
+            PropertyByCategoryScreen(navController)
         }
     }
 }
