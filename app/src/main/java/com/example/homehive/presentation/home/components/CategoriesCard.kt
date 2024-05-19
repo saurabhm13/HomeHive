@@ -1,6 +1,7 @@
 package com.example.homehive.presentation.home.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -31,14 +32,16 @@ import com.example.homehive.R
 @Composable
 fun CategoriesCard(
     icon: Painter,
-    title: String
+    title: String,
+    onClick: () -> Unit
 ) {
 
     Surface(
         modifier = Modifier
             .height(100.dp)
             .width(110.dp)
-            .padding(4.dp),
+            .padding(4.dp)
+            .clickable(onClick = onClick),
         color = Color.White,
         shape = RoundedCornerShape(10.dp),
         shadowElevation = 4.dp,
@@ -64,8 +67,8 @@ fun CategoriesCard(
 }
 
 
-@Preview (showSystemUi = true)
+@Preview(showSystemUi = true)
 @Composable
 fun CategoryCardPreview() {
-    CategoriesCard(icon = painterResource(id = R.drawable.category_home), title = "House")
+    CategoriesCard(icon = painterResource(id = R.drawable.category_home), title = "House", onClick = {})
 }

@@ -51,6 +51,7 @@ import com.example.homehive.data.propertyList
 import com.example.homehive.presentation.home.components.CategoriesCard
 import com.example.homehive.presentation.home.components.PropertyCardHor
 import com.example.homehive.presentation.home.components.PropertyCardVer
+import com.example.homehive.presentation.navigation.Screens
 import com.example.homehive.ui.theme.ubuntu
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -86,7 +87,7 @@ fun HomeScreen(
 
             // Categories
             Spacer(modifier = Modifier.height(20.dp))
-            Category(categoryScroll)
+            Category(categoryScroll, navController)
 
             // For you
             Spacer(modifier = Modifier.height(20.dp))
@@ -125,7 +126,7 @@ private fun ForYou(pagerState: PagerState) {
 }
 
 @Composable
-private fun Category(categoryScroll: ScrollState) {
+private fun Category(categoryScroll: ScrollState, navController: NavController) {
     TitleAndSeeAll(title = "House Type")
 
     Spacer(modifier = Modifier.height(15.dp))
@@ -135,7 +136,10 @@ private fun Category(categoryScroll: ScrollState) {
         for (category in categoryList) {
             CategoriesCard(
                 icon = painterResource(id = category.icon),
-                title = category.title
+                title = category.title,
+                onClick = {
+                    navController.navigate(Screens.PropertyByCategoryScreen.withArg(category.title))
+                }
             )
         }
     }

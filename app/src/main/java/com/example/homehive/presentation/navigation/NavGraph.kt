@@ -1,9 +1,12 @@
 package com.example.homehive.presentation.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavArgument
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
 import com.example.homehive.presentation.category.PropertyByCategoryScreen
 import com.example.homehive.presentation.details.DetailsScreen
 import com.example.homehive.presentation.home.HomeScreen
@@ -35,9 +38,15 @@ fun NavGraph(
         }
 
         composable(
-            route = Screens.PropertyByCategoryScreen.route
+            route = Screens.PropertyByCategoryScreen.route + "/{categoryTitle}",
+            arguments = listOf(
+                navArgument("categoryTitle") {
+                    type = NavType.StringType
+                }
+            )
         ) {
-            PropertyByCategoryScreen(navController)
+            it.arguments?.getString("categoryTitle")
+                ?.let { it1 -> PropertyByCategoryScreen(navController, categoryTitle = it1) }
         }
     }
 }
