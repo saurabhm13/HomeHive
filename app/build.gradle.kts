@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -68,5 +69,6 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     // Compose Navigation
-    implementation("io.github.raamcosta.compose-destinations:core:1.1.2-beta")
+    implementation("androidx.navigation:navigation-compose:2.4.0-alpha10")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
 }

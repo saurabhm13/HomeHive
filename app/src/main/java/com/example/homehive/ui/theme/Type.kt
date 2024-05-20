@@ -32,7 +32,7 @@ val Typography = Typography(
 
     headlineSmall = TextStyle(
         fontFamily = ubuntu,
-        fontSize = 24.sp,
+        fontSize = 22.sp,
         fontWeight = FontWeight.Normal,
     ),
 
@@ -56,13 +56,13 @@ val Typography = Typography(
 
     titleLarge = TextStyle(
         fontFamily = ubuntu,
-        fontSize = 20.sp,
+        fontSize = 18.sp,
         fontWeight = FontWeight.Normal,
     ),
 
     titleMedium = TextStyle(
         fontFamily = ubuntu,
-        fontSize = 16.sp,
+        fontSize = 14.sp,
         fontWeight = FontWeight.Medium,
     ),
 

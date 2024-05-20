@@ -53,6 +53,8 @@ import com.example.homehive.presentation.home.components.PropertyCardHor
 import com.example.homehive.presentation.home.components.PropertyCardVer
 import com.example.homehive.presentation.navigation.Screens
 import com.example.homehive.ui.theme.ubuntu
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -91,29 +93,38 @@ fun HomeScreen(
 
             // For you
             Spacer(modifier = Modifier.height(20.dp))
-            ForYou(pagerState)
+            ForYou(pagerState, navController)
 
             // Nearby
             Spacer(modifier = Modifier.height(20.dp))
-            Nearby()
+            Nearby(navController)
 
         }
     }
 }
 
 @Composable
-private fun Nearby() {
+private fun Nearby(navController: NavController) {
     TitleAndSeeAll(title = "Nearby")
 
     Spacer(modifier = Modifier.height(15.dp))
     for (property in propertyList) {
-        PropertyCardHor(propertyInfo = property)
+        PropertyCardHor(
+            propertyInfo = property,
+            onClick = {
+                navController.currentBackStackEntry?.savedStateHandle?.set(
+                    key = "propertyInfo",
+                    value = property
+                )
+                navController.navigate(Screens.DetailsScreen.route)
+            },
+        )
     }
 }
 
 @Composable
 @OptIn(ExperimentalFoundationApi::class)
-private fun ForYou(pagerState: PagerState) {
+private fun ForYou(pagerState: PagerState, navController: NavController) {
     TitleAndSeeAll(title = "For You")
 
     Spacer(modifier = Modifier.height(15.dp))
@@ -121,7 +132,16 @@ private fun ForYou(pagerState: PagerState) {
         state = pagerState,
         modifier = Modifier.fillMaxWidth()
     ) { page ->
-        PropertyCardVer(propertyInfo = propertyList[page])
+        PropertyCardVer(
+            propertyInfo = propertyList[page],
+            onItemClick = {
+                navController.currentBackStackEntry?.savedStateHandle?.set(
+                    key = "propertyInfo",
+                    value = propertyList[page]
+                )
+                navController.navigate(Screens.DetailsScreen.route)
+            },
+        )
     }
 }
 

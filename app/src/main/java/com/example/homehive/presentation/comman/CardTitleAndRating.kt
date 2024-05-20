@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -20,7 +21,8 @@ import com.example.homehive.R
 @Composable
 fun CardTitleAndRating(
     title: String,
-    rating: Double
+    rating: Double,
+    textStyle: TextStyle = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold)
 ) {
     Row (
         verticalAlignment = Alignment.CenterVertically
@@ -28,7 +30,7 @@ fun CardTitleAndRating(
         Text(
             modifier = Modifier.weight(1F),
             text = title,
-            style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+            style = textStyle,
             maxLines = 1,
             overflow = TextOverflow.Ellipsis
         )

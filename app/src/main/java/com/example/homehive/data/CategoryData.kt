@@ -8,8 +8,8 @@ data class CategoryData(
 )
 
 val categoryList = listOf(
-    CategoryData("Home", R.drawable.category_home),
-    CategoryData("Flat", R.drawable.category_flat),
-    CategoryData("Villa", R.drawable.category_villa),
-    CategoryData("Apartment", R.drawable.category_appartment),
+    CategoryData("Home", R.drawable.home_image),
+    CategoryData("Flat", R.drawable.flat),
+    CategoryData("Villa", R.drawable.villa),
+    CategoryData("Apartment", R.drawable.appartment),
 )

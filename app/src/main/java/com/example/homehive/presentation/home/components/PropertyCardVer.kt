@@ -2,6 +2,7 @@ package com.example.homehive.presentation.home.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -33,7 +34,8 @@ import com.example.homehive.presentation.comman.CardTitleAndRating
 
 @Composable
 fun PropertyCardVer(
-    propertyInfo: PropertyInfo
+    propertyInfo: PropertyInfo,
+    onItemClick: () -> Unit
 ) {
 
     Card(
@@ -41,7 +43,8 @@ fun PropertyCardVer(
         colors = CardDefaults.cardColors(Color.White),
         modifier = Modifier
             .width(500.dp)
-            .padding(4.dp),
+            .padding(4.dp)
+            .clickable(onClick = onItemClick),
         elevation = CardDefaults.cardElevation(4.dp),
     ) {
         Column(
@@ -97,5 +100,5 @@ fun PropertyCardVer(
 @Preview
 @Composable
 fun PropertyCardPreview() {
-    PropertyCardVer(propertyInfo = propertyList[0])
+    PropertyCardVer(propertyInfo = propertyList[0], onItemClick = {})
 }

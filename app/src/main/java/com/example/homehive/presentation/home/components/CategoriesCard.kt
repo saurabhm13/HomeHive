@@ -39,7 +39,7 @@ fun CategoriesCard(
     Surface(
         modifier = Modifier
             .height(100.dp)
-            .width(110.dp)
+            .width(115.dp)
             .padding(4.dp)
             .clickable(onClick = onClick),
         color = Color.White,
@@ -54,12 +54,12 @@ fun CategoriesCard(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Image(
-                modifier = Modifier.size(30.dp),
+                modifier = Modifier.size(40.dp),
                 painter = icon, contentDescription = null,
                 contentScale = ContentScale.FillHeight
             )
 
-            Spacer(modifier = Modifier.height(15.dp))
+            Spacer(modifier = Modifier.height(5.dp))
             Text(text = title, style = MaterialTheme.typography.titleMedium)
         }
 
@@ -70,5 +70,5 @@ fun CategoriesCard(
 @Preview(showSystemUi = true)
 @Composable
 fun CategoryCardPreview() {
-    CategoriesCard(icon = painterResource(id = R.drawable.category_home), title = "House", onClick = {})
+    CategoriesCard(icon = painterResource(id = R.drawable.flat), title = "House", onClick = {})
 }

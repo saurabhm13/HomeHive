@@ -22,6 +22,9 @@ import androidx.navigation.NavController
 import com.example.homehive.R
 import com.example.homehive.data.propertyList
 import com.example.homehive.presentation.home.components.PropertyCardHor
+import com.example.homehive.presentation.navigation.Screens
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -54,7 +57,16 @@ fun PropertyByCategoryScreen(
                     .padding(horizontal = 15.dp)
             ) {
                 items(propertyList.size) { index ->
-                    PropertyCardHor(propertyInfo = propertyList[index])
+                    PropertyCardHor(
+                        propertyInfo = propertyList[index],
+                        onClick = {
+                            navController.currentBackStackEntry?.savedStateHandle?.set(
+                                key = "propertyInfo",
+                                value = propertyList[index]
+                            )
+                            navController.navigate(Screens.DetailsScreen.route)
+                        },
+                    )
                 }
             }
         }

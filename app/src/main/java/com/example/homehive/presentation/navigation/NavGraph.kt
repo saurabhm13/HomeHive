@@ -1,12 +1,14 @@
 package com.example.homehive.presentation.navigation
 
+import android.util.Log
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavArgument
+import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.example.homehive.data.PropertyInfo
 import com.example.homehive.presentation.category.PropertyByCategoryScreen
 import com.example.homehive.presentation.details.DetailsScreen
 import com.example.homehive.presentation.home.HomeScreen
@@ -33,8 +35,14 @@ fun NavGraph(
 
         composable(
             route = Screens.DetailsScreen.route
+
         ) {
-            DetailsScreen(navController)
+
+            val result = navController.previousBackStackEntry?.savedStateHandle?.get<PropertyInfo>("propertyInfo")
+
+            if (result != null) {
+                DetailsScreen(navController, result)
+            }
         }
 
         composable(
