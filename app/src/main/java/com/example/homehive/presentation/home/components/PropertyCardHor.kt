@@ -24,6 +24,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.compose.rememberAsyncImagePainter
 import com.example.homehive.R
 import com.example.homehive.data.PropertyInfo
 import com.example.homehive.data.propertyList
@@ -53,7 +54,7 @@ fun PropertyCardHor(
                     .height(100.dp)
                     .width(100.dp)
                     .clip(RoundedCornerShape(10)),
-                painter = painterResource(id = propertyInfo.images[0]),
+                painter = rememberAsyncImagePainter(propertyInfo.images[0]),
                 contentDescription = "Property Image",
                 contentScale = ContentScale.Crop
             )

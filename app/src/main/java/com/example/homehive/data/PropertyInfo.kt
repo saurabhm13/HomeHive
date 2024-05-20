@@ -8,7 +8,7 @@ import kotlinx.serialization.Serializable
 @Parcelize
 data class PropertyInfo(
     val name: String,
-    val images: List<Int>,
+    val images: List<String>,
     val noOfBedrooms: Int,
     val noOfBathroom: Int,
     val areaSqFt: Int,
@@ -23,10 +23,10 @@ val propertyList = listOf(
     PropertyInfo(
         "Minimal living flat",
         listOf(
-            R.drawable.out_house5,
-            R.drawable.out_house4,
-            R.drawable.int_house1,
-            R.drawable.int_house2
+            "https://www.bhg.com/thmb/H9VV9JNnKl-H1faFXnPlQfNprYw=/1799x0/filters:no_upscale():strip_icc()/white-modern-house-curved-patio-archway-c0a4a3b3-aa51b24d14d0464ea15d36e05aa85ac9.jpg",
+            "https://media.architecturaldigest.com/photos/571e97c5741fcddb16b559c9/16:9/w_5119,h_2879,c_limit/modernist-decor-inspiration-01.jpg",
+            "https://images.unsplash.com/photo-1495433324511-bf8e92934d90?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://plus.unsplash.com/premium_photo-1661963209358-0f4d5f509d10?q=80&w=3707&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ),
         3,
         2,
@@ -40,10 +40,10 @@ val propertyList = listOf(
     PropertyInfo(
         "Minimal living flat",
         listOf(
-            R.drawable.out_house3,
-            R.drawable.out_house2,
-            R.drawable.int_house3,
-            R.drawable.int_house4
+            "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTExfHxob3VzZXxlbnwwfHwwfHx8MA%3D%3D",
+            "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?q=80&w=2784&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+
         ),
         4,
         4,
@@ -57,10 +57,10 @@ val propertyList = listOf(
     PropertyInfo(
         "Minimal living flat",
         listOf(
-            R.drawable.out_house7,
-            R.drawable.out_house8,
-            R.drawable.int_house5,
-            R.drawable.int_house6
+            "https://images.unsplash.com/photo-1594348352429-159508d48c57?q=80&w=3548&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1556594472-e9b933db923c?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+
         ),
         5,
         4,
@@ -74,10 +74,10 @@ val propertyList = listOf(
     PropertyInfo(
         "Minimal living flat",
         listOf(
-            R.drawable.out_house10,
-            R.drawable.out_house9,
-            R.drawable.int_house1,
-            R.drawable.int_house7
+            "https://images.unsplash.com/photo-1623715056555-91d8ba2b426f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?q=80&w=3648&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1592928302636-c83cf1e1c887?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ),
         3,
         3,
@@ -92,10 +92,10 @@ val propertyList = listOf(
     PropertyInfo(
         "Minimal living flat",
         listOf(
-            R.drawable.out_house11,
-            R.drawable.out_house3,
-            R.drawable.int_house1,
-            R.drawable.int_house7
+            "https://images.unsplash.com/photo-1614846384571-1e31322ed3a9?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1495433324511-bf8e92934d90?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1579725942955-4d8377f8c66a?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D"
         ),
         6,
         4,
@@ -109,10 +109,10 @@ val propertyList = listOf(
     PropertyInfo(
         "Minimal living flat",
         listOf(
-            R.drawable.out_house8,
-            R.drawable.out_house7,
-            R.drawable.int_house1,
-            R.drawable.int_house7
+            "https://images.unsplash.com/photo-1613553507747-5f8d62ad5904?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://plus.unsplash.com/premium_photo-1683140425081-14c44089acd0?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1489171078254-c3365d6e359f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjk2fHxob3VzZXxlbnwwfHwwfHx8MA%3D%3D",
+            "https://images.unsplash.com/photo-1505692433770-36f19f51681d?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ),
         5,
         4,

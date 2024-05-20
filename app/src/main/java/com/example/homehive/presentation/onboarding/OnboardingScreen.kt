@@ -30,6 +30,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import coil.compose.rememberAsyncImagePainter
 import com.example.homehive.R
 import com.example.homehive.presentation.navigation.Screens
 import com.example.homehive.ui.theme.lightBlue
@@ -65,7 +66,7 @@ fun OnBoardingScreen(
                     Image(
 
                         contentScale = ContentScale.FillHeight,
-                        painter = painterResource(id = R.drawable.out_house6),
+                        painter = rememberAsyncImagePainter("https://plus.unsplash.com/premium_photo-1661883964999-c1bcb57a7357?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
                         contentDescription = "Onboarding image 1",
                     )
                 }
@@ -85,7 +86,7 @@ fun OnBoardingScreen(
                     Image(
 
                         contentScale = ContentScale.FillHeight,
-                        painter = painterResource(id = R.drawable.out_house5),
+                        painter = rememberAsyncImagePainter("https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
                         contentDescription = "Onboarding image 1",
                     )
                 }

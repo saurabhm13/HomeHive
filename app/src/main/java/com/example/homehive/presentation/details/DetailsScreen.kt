@@ -49,6 +49,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import coil.compose.rememberAsyncImagePainter
 import com.example.homehive.R
 import com.example.homehive.data.PropertyInfo
 import com.example.homehive.data.propertyList
@@ -193,7 +194,7 @@ private fun ImageSection(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(500.dp),
-            painter = painterResource(id = propertyInfo.images[currentImage]),
+            painter = rememberAsyncImagePainter(propertyInfo.images[currentImage]),
             contentDescription = "Property Image",
             contentScale = ContentScale.Crop
 
@@ -254,7 +255,7 @@ private fun ImageSection(
                         )
                         .clip(RoundedCornerShape(10.dp))
                         .clickable { currentImage = index },
-                    painter = painterResource(id = images),
+                    painter = rememberAsyncImagePainter(images),
                     contentDescription = "Image",
                     contentScale = ContentScale.Crop
                 )

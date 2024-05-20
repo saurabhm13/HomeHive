@@ -31,6 +31,7 @@ import com.example.homehive.data.PropertyInfo
 import com.example.homehive.data.propertyList
 import com.example.homehive.presentation.comman.CardPropertyHighlights
 import com.example.homehive.presentation.comman.CardTitleAndRating
+import coil.compose.rememberAsyncImagePainter
 
 @Composable
 fun PropertyCardVer(
@@ -58,8 +59,10 @@ fun PropertyCardVer(
                     .height(180.dp)
             ) {
                 Image(
-                    modifier = Modifier.clip(RoundedCornerShape(10.dp)),
-                    painter = painterResource(id = propertyInfo.images[0]),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(RoundedCornerShape(10.dp)),
+                    painter = rememberAsyncImagePainter(propertyInfo.images[0]),
                     contentDescription = "null",
                     contentScale = ContentScale.Crop
                 )
